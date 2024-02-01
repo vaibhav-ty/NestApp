@@ -21,6 +21,7 @@ import { CitiesModule } from './cities/cities.module';
         console.log('DB_NAME', configService.get('DB_NAME'));
         return {
             type: 'postgres',
+            ssl: { rejectUnauthorized: false },
             host: configService.get('DB_HOST'),
             port: +configService.get('DB_PORT'),
             username: configService.get('DB_USERNAME'),
